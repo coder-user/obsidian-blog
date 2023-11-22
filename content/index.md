@@ -1,5 +1,5 @@
 ---
-title: Welcome to Quartz
+title: Coolliuzw
 ---
 
 This is a blank Quartz installation.
