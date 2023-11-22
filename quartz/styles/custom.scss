@@ -25,17 +25,14 @@ h6 {
   color: #138DC1;
 }
 
-
-strong, b {
-    color: #E75545;
+.page {
+    & article {
+      p > strong {
+        color: #E85A4A;
+      }
+    }
 }
   
 pre, code {
-  color: #0000FF; 
+  color: #E75545; 
 }
-
-
-pre > code {
-  color: #00FF00; 
-}
-  
