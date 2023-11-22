@@ -2,7 +2,7 @@
 
 // put your custom CSS here!
 h1 {
-  color: #f03f28;
+  color: var(--dark);
 }
 
 h2 {
@@ -24,3 +24,18 @@ h5 {
 h6 {
   color: #138DC1;
 }
+
+
+strong, b {
+    color: #E75545;
+}
+  
+pre, code {
+  color: #0000FF; 
+}
+
+
+pre > code {
+  color: #00FF00; 
+}
+  
