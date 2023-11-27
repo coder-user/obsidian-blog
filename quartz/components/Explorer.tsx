@@ -95,7 +95,7 @@ export default ((userOpts?: Partial<Options>) => {
           data-savestate={opts.useSavedState}
           data-tree={jsonTree}
         >
-          <h1>{opts.title}</h1>
+          {/* <h1>{opts.title}</h1> */}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"
