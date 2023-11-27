@@ -2,12 +2,26 @@
 
 // put your custom CSS here!
 h1 {
-  display: none;
+  // display: none;
+  text-align: center;
   color: var(--dark);
 }
 
 h2 {
   color: #e4980c;
+}
+
+:is(h2, .HyperMD-header-2) {
+  position: relative;
+}
+:is(h2, .HyperMD-header-2)::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  bottom: 4px;
+  left: 0;
+  background-image: linear-gradient(to right, #e4980c 30%, transparent 70%);
 }
 
 h3 {
