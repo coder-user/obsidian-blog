@@ -42,7 +42,7 @@ scoop install ntop duf make ripgrep fd fzf starship winfetch
 
 ## 2 配置文件
 
-### powershell
+### 2.1 powershell
 
 ```bash
 # 设置 PowerShell 使用 UTF-8 编码
@@ -123,7 +123,7 @@ function Get-IPv4Routes {
 Set-Alias -Name getip -Value Get-IPv4Routes
 ```
 
-### starship
+### 2.2 starship
 
 - **Windows**: `C:\Users\<YourUsername>\starship.toml`
 
