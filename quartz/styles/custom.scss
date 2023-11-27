@@ -2,6 +2,7 @@
 
 // put your custom CSS here!
 h1 {
+  display: none;
   color: var(--dark);
 }
 
@@ -32,7 +33,7 @@ h6 {
       }
     }
 }
-  
+
 pre, code {
   color: #E75545; 
 }
