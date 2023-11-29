@@ -10,21 +10,16 @@ tags:
 ## 1 配置准备
 
 ```powershell
-# 安装 oh-my-posh
-Install-Module -Name oh-my-posh -Scope CurrentUser -Force
+# 安装 Scoop（如果还未安装）
+iwr -useb get.scoop.sh | iex
 
-# 安装 posh-git
-Install-Module -Name posh-git -Scope CurrentUser -Force
-
-# 安装 Starship
+# 安装 Starship（也可以使用scoop）安装
 winget install starship
-# 或者使用其他方式安装（如 Scoop）
 
 # 安装 Terminal-Icons
 Install-Module -Name Terminal-Icons -Repository PSGallery -Force
 
 # 安装 PSReadLine
-# 注意：如果 PSReadLine 已经安装且版本较新，可以跳过这一步
 Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
 
 # 安装 PSFzf
@@ -32,9 +27,6 @@ Install-Module -Name PSFzf -Scope CurrentUser -Force
 
 # 安装 z 模块
 Install-Module -Name z -Force
-
-# 安装 Scoop（如果还未安装）
-iwr -useb get.scoop.sh | iex
 
 # 使用 Scoop 安装相关工具
 scoop install ntop duf make ripgrep fd fzf starship winfetch
@@ -52,11 +44,6 @@ scoop install ntop duf make ripgrep fd fzf starship winfetch
 $env:http_proxy = "http://127.0.0.1:7890"
 $env:https_proxy = "http://127.0.0.1:7890"
 
-# oh-my-posh + posh-git 配置
-# Import-Module posh-git
-# oh-my-posh 初始化，配置主题
-# oh-my-posh init pwsh --config 'C:\Users\14138\AppData\Local\Programs\oh-my-posh\themes\blue-owl.omp.json' | Invoke-Expression
-
 # 设置别名
 Set-Alias open explorer.exe
 Set-Alias ls Get-ChildItem
@@ -64,7 +51,14 @@ Set-Alias ll Get-ChildItem
 Set-Alias rm Remove-Item
 Set-Alias mv Move-Item
 Set-Alias vim nvim
-Set-Alias lvim 'C:\Users\14138\.local\bin\lvim.ps1'
+Set-Alias cat Get-Content
+Set-Alias mkdir New-Item -ItemType Directory
+Set-Alias nano notepad
+Set-Alias man Get-Help
+function touch { New-Item -ItemType File -Path $args } 
+Set-Alias touch touch
+Set-Alias ps Get-Process
+# Set-Alias lvim 'C:\Users\14138\.local\bin\lvim.ps1'
 
 # starship 提示符配置
 # Invoke-Expression (&starship init powershell)
@@ -78,7 +72,6 @@ Import-Module -Name Terminal-Icons
 # Install-Module -Name PowerShellGet -Force
 # Install-Module PSReadLine
 # Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -SkipPublisherCheck
-
 Import-Module -Name PSReadLine
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 Set-PSReadLineOption -PredictionSource History
@@ -86,12 +79,12 @@ Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineOption -HistorySearchCursorMovesToEnd
-Set-PSReadLineOption -MaximumHistoryCount 8192
+Set-PSReadLineOption -MaximumHistoryCount 16384
 Set-PSReadLineKeyHandler -Key 'Ctrl+j' -Function HistorySearchForward
 Set-PSReadLineKeyHandler -Key 'Ctrl+k' -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key "Ctrl+z" -Function Undo
 Set-PSReadLineKeyHandler -Key "Ctrl+d" -Function MenuComplete
-Set-PSReadLineOption -MaximumHistoryCount 8192
+Set-PSReadLineOption -MaximumHistoryCount 16384
 
 # PSFzf 模块配置
 # Install-Module -Name PSFzf -RequiredVersion 2.5.16

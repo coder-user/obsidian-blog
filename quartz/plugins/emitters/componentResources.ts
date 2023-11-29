@@ -158,6 +158,7 @@ export const ComponentResources: QuartzEmitterPlugin<Options> = (opts?: Partial<
 
       if (fontOrigin === "googleFonts") {
         resources.css.push(googleFontHref(ctx.cfg.configuration.theme))
+        resources.css.push("https://cdn.bootcdn.net/ajax/libs/lxgw-wenkai-screen-webfont/1.7.0/style.min.css")
       } else if (fontOrigin === "local") {
         // let the user do it themselves in css
       }
